@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 cmake_minimum_required(VERSION 3.10.2)
 project(robotik_kol_pkg)
 set(CMAKE_CXX_STANDART 14)
@@ -23,7 +23,7 @@ add_executable(blocks_poses_publisher blocks_poses_publisher.cpp)
 # Specify libraries against which to link.
 target_link_libraries(blocks_spawner ${catkin_LIBRARIES})
 target_link_libraries(blocks_poses_publisher ${catkin_LIBRARIES})
-=======
+
 cmake_minimum_required(VERSION 3.0.2)
 project(robotik_kol_pkg)
 
@@ -235,4 +235,3 @@ include_directories(
 
 ## Add folders to be run by python nosetests
 # catkin_add_nosetests(test)
->>>>>>> bec217401a3e4cc5acd7a5ab1d1549c9870abb62
