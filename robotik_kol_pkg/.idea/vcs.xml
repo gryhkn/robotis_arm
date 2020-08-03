@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="VcsDirectoryMappings">
+<<<<<<< HEAD
+    <mapping directory="$PROJECT_DIR$/.." vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/../gazebo_ros_demos" vcs="Git" />
+=======
+    <mapping directory="$USER_HOME$/Desktop/yeni_open_manipulator" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/.." vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/../baxter_common" vcs="Git" />
+>>>>>>> bec217401a3e4cc5acd7a5ab1d1549c9870abb62
+    <mapping directory="$PROJECT_DIR$" vcs="Git" />
+  </component>
+</project>

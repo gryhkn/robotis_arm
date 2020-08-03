@@ -1,0 +1,57 @@
+<launch>
+<<<<<<< HEAD
+    <!-- These are the arguments you can pass this launch file, for example paused:=true -->
+    <arg name="gui" default="true"/>
+    <arg name="paused" default="true"/>
+    <arg name="use_sim_time" default="true"/>
+
+
+    <!-- We resume the logic in empty_world.launch, changing only the name of the world to be launched -->
+    <include file="$(find gazebo_ros)/launch/empty_world.launch">
+        <arg name="world_name" value="$(find robotik_kol_gazebo)/worlds/empty.world"/>
+        <arg name="gui" value="$(arg gui)"/>
+        <arg name="paused" value="$(arg paused)"/>
+        <arg name="use_sim_time" value="$(arg use_sim_time)"/>
+    </include>
+
+    <param name="robot_description"
+           command="$(find xacro)/xacro --inorder '$(find robotik_kol_pkg)/urdf/robot_kol.xacro'"/>
+
+    <!-- Run a python script to the send a service call to gazebo_ros to spawn a URDF robot -z 0.0 -J gripper_sub 0.005 -param robot_description -->
+    <node name="urdf_spawner" pkg="gazebo_ros" type="spawn_model" respawn="false" output="screen"
+          args="-urdf -model robotik_kol -param robot_description -y 0.8 -x 0.0 -z 0.05 "/>
+
+    <!-- Run controller utils -->
+    <!-- include file="$(find robotik_kol_gazebo)/launch/controller_utils.launch"-->
+
+    <!-- ros_control robotis manipulator launch file -->
+    <include file="$(find robotik_kol_gazebo)/launch/robotik_kol_controller.launch"/>
+=======
+  <!-- These are the arguments you can pass this launch file, for example paused:=true -->
+  <arg name="gui" default="true"/>
+  <arg name="paused" default="true"/>
+  <arg name="use_sim_time" default="true"/>
+
+
+  <!-- We resume the logic in empty_world.launch, changing only the name of the world to be launched -->
+  <include file="$(find gazebo_ros)/launch/empty_world.launch">
+    <arg name="world_name" value="$(find robotik_kol_gazebo)/worlds/empty.world"/>
+    <arg name="gui" value="$(arg gui)" />
+    <arg name="paused" value="$(arg paused)"/>
+    <arg name="use_sim_time" value="$(arg use_sim_time)"/>
+  </include>
+
+  <param name="robot_description"
+     command="$(find xacro)/xacro --inorder '$(find robotik_kol_pkg)/urdf/robot_kol.xacro'"/>
+
+  <!-- Run a python script to the send a service call to gazebo_ros to spawn a URDF robot -->
+  <node name="urdf_spawner" pkg="gazebo_ros" type="spawn_model" respawn="false" output="screen"
+     args="-urdf -model robotik_kol -z 0.0 -J gripper_sub 0.005 -param robot_description"/>
+  
+  <!-- Run controller utils -->
+  <!-- include file="$(find robotik_kol_gazebo)/launch/controller_utils.launch"-->
+
+  <!-- ros_control robotis manipulator launch file -->
+  <include file="$(find robotik_kol_gazebo)/launch/robotik_kol_controller.launch"/>
+>>>>>>> bec217401a3e4cc5acd7a5ab1d1549c9870abb62
+</launch>

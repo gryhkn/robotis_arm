@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+<launch>
+
+  <arg name="gui" default="true"/>
+  <arg name="paused" default="false"/>
+  <arg name="debug" default="false" />
+  <arg name="use_sim_time" default="true"/>
+
+  <!-- We resume the logic in empty_world.launch, changing only the name of the world to be launched -->
+  <include file="$(find gazebo_ros)/launch/empty_world.launch">
+    <arg name="world_name" value="$(find robotik_kol_pkg)/world/empty.world"/>
+    <arg name="gui" value="$(arg gui)" />
+    <arg name="paused" value="$(arg paused)"/>
+    <arg name="use_sim_time" value="$(arg use_sim_time)"/>
+  </include>
+
+  <param name="robot_description" command="$(find xacro)/xacro --inorder '$(find robotik_kol_pkg)/urdf/robot_kol.xacro'"/>
+
+    <node name="urdf_spawner" pkg="gazebo_ros" type="spawn_model" respawn="false" output="screen"
+     args="-urdf -model robotik_kol -param robot_description -y 0.6 -x 0.0 -z 0.2 "/>
+
+  <param name="red_box_path" type="str" value="$(find robotik_kol_pkg)/urdf/red_box.urdf"/>
+  <param name="blue_box_path" type="str" value="$(find robotik_kol_pkg)/urdf/blue_box.urdf"/>
+  <param name="green_box_path" type="str" value="$(find robotik_kol_pkg)/urdf/green_box.urdf"/>
+
+  <!-- spawn the conveyor_belt in gazebo -->
+  <node name="spawn_conveyor_belt" pkg="gazebo_ros" type="spawn_model" args="-file $(find robotik_kol_pkg)/urdf/conveyor_belt.urdf -urdf -model conveyor_belt" />
+  <!-- spawn the conveyor_belt in gazebo -y 0.8 -x -0.5 -z 0.05-->
+  <node name="bin" pkg="gazebo_ros" type="spawn_model" args="-file $(find robotik_kol_pkg)/urdf/bin.urdf -urdf -model bin -y 0.8 -x -0.5 -z 0.05" />
+  <!-- the red blocks spawner node -->
+  <node name="blocks_spawner" pkg="robotik_kol_pkg" type="blocks_spawner" output="screen" />
+
+<!-- the cylinder poses publisher node -->
+  <node name="blocks_poses_publisher" pkg="robotik_kol_pkg" type="blocks_poses_publisher" output="screen"/>
+
+  <include file="$(find robotik_kol_gazebo)/launch/controller_utils.launch"/>
+
+    <!-- ros_control robotis manipulator launch file -->
+  <include file="$(find robotik_kol_gazebo)/launch/robotik_kol_controller.launch"/>
+
+</launch>

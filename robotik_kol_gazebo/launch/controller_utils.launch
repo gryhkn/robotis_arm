@@ -1,0 +1,17 @@
+<launch>
+  <!-- joint_state_controller -->
+  <rosparam file="$(find robotik_kol_gazebo)/config/joint_state_controller.yaml" command="load"/>
+<<<<<<< HEAD
+  <node name="joint_state_controller_spawner" pkg="controller_manager" type="controller_manager" ns="/panda"
+    args="spawn joint_state_controller" respawn="false" output="screen"/>
+
+   <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher"
+       respawn="false" output="screen">
+   <remap from="/joint_states" to="/robot_kol/joint_states" />
+ </node>
+
+=======
+  <node name="joint_state_controller_spawner" pkg="controller_manager" type="controller_manager" 
+    args="spawn joint_state_controller" respawn="false" output="screen"/>
+>>>>>>> bec217401a3e4cc5acd7a5ab1d1549c9870abb62
+</launch>

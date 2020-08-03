@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module type="PYTHON_MODULE" version="4">
+  <component name="NewModuleRootManager">
+<<<<<<< HEAD
+    <content url="file://$MODULE_DIR$">
+      <excludeFolder url="file://$MODULE_DIR$/venv" />
+    </content>
+    <orderEntry type="jdk" jdkName="Python 2.7 (robotik_kol_pkg)" jdkType="Python SDK" />
+    <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="module" module-name="mastering_ros_robot_description_pkg" />
+    <orderEntry type="module" module-name="baxter_common" />
+    <orderEntry type="module" module-name="robotik_kol_gazebo" />
+    <orderEntry type="module" module-name="simulation_ws" />
+    <orderEntry type="module" module-name="robotic_arm" />
+    <orderEntry type="module" module-name="opencv_project" />
+    <orderEntry type="module" module-name="gazebo_ros_demos" />
+=======
+    <content url="file://$MODULE_DIR$" />
+    <orderEntry type="inheritedJdk" />
+    <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="module" module-name="mastering_ros_robot_description_pkg" />
+    <orderEntry type="module" module-name="yeni_open_manipulator" />
+    <orderEntry type="module" module-name="baxter_common" />
+    <orderEntry type="module" module-name="robotik_kol_gazebo" />
+>>>>>>> bec217401a3e4cc5acd7a5ab1d1549c9870abb62
+  </component>
+</module>

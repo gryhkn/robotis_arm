@@ -1,0 +1,11 @@
+moveit_setup_assistant_config:
+  URDF:
+    package: robotik_kol_pkg
+    relative_path: urdf/robot_kol.xacro
+    xacro_args: ""
+  SRDF:
+    relative_path: config/robot_kol.srdf
+  CONFIG:
+    author_name: gryhkn
+    author_email: girayhakan23@gmail.com
+    generated_timestamp: 1591249736

@@ -1,0 +1,38 @@
+<launch>
+  <!-- Load joint controller configurations from YAML file to parameter server -->
+<<<<<<< HEAD
+  <rosparam file="$(find robotik_kol_gazebo)/config/arm_controller.yaml" command="load"/>
+  <rosparam file="$(find robotik_kol_gazebo)/config/gripper_controller.yaml" command="load"/>
+
+  <!--node name="joint_state_controller_spawner" pkg="controller_manager" type="controller_manager"
+        ns="/panda" args="spawn joint_state_controller" respawn="false" output="screen"/-->
+
+  <!-- load the controllers -->
+  <!--node name="controller_spawner" pkg="controller_manager" type="spawner" respawn="false"
+    output="screen" ns="/panda" args="
+                          joint1_position
+=======
+  <rosparam file="$(find robotik_kol_gazebo)/config/joint_state_controller.yaml" command="load"/>
+  <node name="joint_state_controller_spawner" pkg="controller_manager" type="controller_manager"
+        ns="/panda" args="spawn joint_state_controller" respawn="false" output="screen"/>
+
+  <!-- load the controllers -->
+  <node name="controller_spawner" pkg="controller_manager" type="spawner" respawn="false"
+    output="screen" ns="/panda" args="joint1_position
+>>>>>>> bec217401a3e4cc5acd7a5ab1d1549c9870abb62
+                          joint2_position
+                          joint3_position
+                          joint4_position
+                          gripper_position
+<<<<<<< HEAD
+                          gripper_sub_position"/-->
+
+  <!-- Run gripper sub position publisher -->
+<!--  <node name="omx_gripper_sub_publisher" pkg="robotik_kol_gazebo" type="omx_gripper_sub_publisher" output="screen"/>-->
+=======
+                          gripper_sub_position"/>
+
+  <!-- Run gripper sub position publisher -->
+  <node name="omx_gripper_sub_publisher" pkg="robotik_kol_gazebo" type="omx_gripper_sub_publisher" output="screen"/>
+>>>>>>> bec217401a3e4cc5acd7a5ab1d1549c9870abb62
+</launch>

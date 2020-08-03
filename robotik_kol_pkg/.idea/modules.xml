@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/../baxter_common/.idea/baxter_common.iml" filepath="$PROJECT_DIR$/../baxter_common/.idea/baxter_common.iml" />
+<<<<<<< HEAD
+      <module fileurl="file://$PROJECT_DIR$/../gazebo_ros_demos/.idea/gazebo_ros_demos.iml" filepath="$PROJECT_DIR$/../gazebo_ros_demos/.idea/gazebo_ros_demos.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../mastering_ros_robot_description_pkg/.idea/mastering_ros_robot_description_pkg.iml" filepath="$PROJECT_DIR$/../mastering_ros_robot_description_pkg/.idea/mastering_ros_robot_description_pkg.iml" />
+      <module fileurl="file://$USER_HOME$/Applications/opencv_project/.idea/opencv_project.iml" filepath="$USER_HOME$/Applications/opencv_project/.idea/opencv_project.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../robotic_arm/.idea/robotic_arm.iml" filepath="$PROJECT_DIR$/../robotic_arm/.idea/robotic_arm.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../robotik_kol_gazebo/.idea/robotik_kol_gazebo.iml" filepath="$PROJECT_DIR$/../robotik_kol_gazebo/.idea/robotik_kol_gazebo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/robotik_kol_pkg.iml" filepath="$PROJECT_DIR$/.idea/robotik_kol_pkg.iml" />
+      <module fileurl="file://$USER_HOME$/Downloads/simulation_ws/.idea/simulation_ws.iml" filepath="$USER_HOME$/Downloads/simulation_ws/.idea/simulation_ws.iml" />
+=======
+      <module fileurl="file://$PROJECT_DIR$/../mastering_ros_robot_description_pkg/.idea/mastering_ros_robot_description_pkg.iml" filepath="$PROJECT_DIR$/../mastering_ros_robot_description_pkg/.idea/mastering_ros_robot_description_pkg.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../robotik_kol_gazebo/.idea/robotik_kol_gazebo.iml" filepath="$PROJECT_DIR$/../robotik_kol_gazebo/.idea/robotik_kol_gazebo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/robotik_kol_pkg.iml" filepath="$PROJECT_DIR$/.idea/robotik_kol_pkg.iml" />
+      <module fileurl="file://$USER_HOME$/Desktop/yeni_open_manipulator/.idea/yeni_open_manipulator.iml" filepath="$USER_HOME$/Desktop/yeni_open_manipulator/.idea/yeni_open_manipulator.iml" />
+>>>>>>> bec217401a3e4cc5acd7a5ab1d1549c9870abb62
+    </modules>
+  </component>
+</project>

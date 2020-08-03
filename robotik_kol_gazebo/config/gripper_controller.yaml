@@ -1,0 +1,20 @@
+panda:
+<<<<<<< HEAD
+  gripper_position:
+    type: effort_controllers/JointPositionController
+    joint: gripper
+    pid: {p: 100, i: 0, d: 0}
+  gripper_sub_position:
+    type: effort_controllers/JointPositionController
+    joint: gripper_sub
+    pid: {p: 100, i: 0, d: 0}
+=======
+    gripper_position:
+	type: effort_controllers/JointPositionController
+	joint: gripper
+	pid: {p: 100, i: 0, d: 0}
+    gripper_sub_position:
+	type: effort_controllers/JointPositionController
+	joint: gripper_sub
+	pid: {p: 100, i: 0, d: 0}
+>>>>>>> bec217401a3e4cc5acd7a5ab1d1549c9870abb62
