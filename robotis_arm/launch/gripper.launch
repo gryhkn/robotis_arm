@@ -13,8 +13,14 @@
             ns="r2d2_joint_state_controller" />
   <rosparam command="load"
             file="$(find robotis_arm)/config/head.yaml"
-            ns="new_controller" />
+            ns="r2d2_head_controller" />
+  <rosparam command="load"
+            file="$(find robotis_arm)/config/gripper.yaml"
+            ns="r2d2_gripper_controller" />
 
   <node name="r2d2_controller_spawner" pkg="controller_manager" type="spawner"
-    args="r2d2_joint_state_controller new_controller --shutdown-timeout 3"/>
+    args="r2d2_joint_state_controller
+          r2d2_head_controller
+          r2d2_gripper_controller
+          --shutdown-timeout 3"/>
 </launch>
