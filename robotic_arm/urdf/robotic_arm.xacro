@@ -1,6 +1,14 @@
 <?xml version="1.0"?>
 <robot name="robotic_arm" xmlns:xacro="http://ros.org/wiki/xacro">
 
+      <!-- ros_control plugin -->
+  <gazebo>
+    <plugin name="gazebo_ros_control" filename="libgazebo_ros_control.so">
+      <robotNamespace>/robotic_arm</robotNamespace>
+      <robotSimType>gazebo_ros_control/DefaultRobotHWSim</robotSimType>
+    </plugin>
+  </gazebo>
+
     <xacro:macro name="RefLink" params="ref">
         <gazebo reference="${ref}">
           <kp>1000000.0</kp>
@@ -17,6 +25,7 @@
   <!--RefLink ref="world1"/ -->
 
   <!-- Link1 -->
+  <RefLink ref="world"/>
   <RefLink ref="link1"/>
 
   <!-- Link2 -->
@@ -43,7 +52,7 @@
   </gazebo>
 
 
-    <link name="world1">
+    <link name="world">
             <visual>
             <origin xyz="0 0 0" rpy="0 0 0"/>
             <geometry>
@@ -72,15 +81,6 @@
 
     </link>
 
-    <gazebo reference="world">
-          <kp>1000000.0</kp>
-          <kd>100.0</kd>
-          <mu1>30.0</mu1>
-          <mu2>30.0</mu2>
-          <maxVel>1.0</maxVel>
-          <minDepth>0.001</minDepth>
-          <material>Gazebo/Orange</material>
-    </gazebo>
 
     <joint name="fixed_1" type="fixed">
         <parent link="world"/>
@@ -128,7 +128,7 @@
         <child link="link2"/>
         <origin xyz="0.012 0.0 0.017" rpy="0 0 0"/>
         <axis xyz="0 0 1"/>
-        <limit velocity="4.8" effort="1" lower="${-pi*0.9}" upper="${pi*0.9}" />
+        <limit velocity="4.8" effort="1" lower="-2.826" upper="2.826" />
     </joint>
 
     <!--  Link 2 -->
@@ -165,7 +165,7 @@
         <child link="link3"/>
         <origin xyz="0.0 0.0 0.0595" rpy="0 0 0"/>
         <axis xyz="0 1 0"/>
-        <limit velocity="4.8" effort="1" lower="${-pi*0.57}" upper="${pi*0.5}" />
+        <limit velocity="4.8" effort="1" lower="-1.78" upper="1.78" />
     </joint>
 
     <!--  Link 3 -->
@@ -202,7 +202,7 @@
         <child link="link4"/>
         <origin xyz="0.024 0 0.128" rpy="0 0 0"/>
         <axis xyz="0 1 0"/>
-        <limit velocity="4.8" effort="1" lower="${-pi*0.3}" upper="${pi*0.44}" />
+        <limit velocity="4.8" effort="1" lower="-0.942" upper="1.38" />
     </joint>
 
     <!--  Link 4 -->
@@ -239,7 +239,7 @@
         <child link="link5"/>
         <origin xyz="0.124 0.0 0.0" rpy="0 0 0"/>
         <axis xyz="0 1 0"/>
-        <limit velocity="4.8" effort="1" lower="${-pi*0.57}" upper="${pi*0.65}" />
+        <limit velocity="4.8" effort="1" lower="-1.78" upper="2.04" />
     </joint>
 
     <!--  Link 5 -->
@@ -384,16 +384,6 @@
 
     <link name="camera_link"/>
 
-  <!-- ros_control plugin -->
-  <gazebo>
-    <plugin name="gazebo_ros_control" filename="libgazebo_ros_control.so">
-      <robotNamespace>/panda</robotNamespace>
-      <controlPeriod>0.001</controlPeriod>
-      <robotSimType>gazebo_ros_control/DefaultRobotHWSim</robotSimType>
-      <legacyModeNS>true</legacyModeNS>
-    </plugin>
-  </gazebo>
-
   <transmission name="tran1">
     <type>transmission_interface/SimpleTransmission</type>
     <joint name="joint1">
@@ -401,18 +391,7 @@
     </joint>
     <actuator name="motor1">
       <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
-      <mechanicalReduction>1</mechanicalReduction>
-    </actuator>
-  </transmission>
-
-  <transmission name="tran1">
-    <type>transmission_interface/SimpleTransmission</type>
-    <joint name="joint1">
-      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
-    </joint>
-    <actuator name="motor1">
-      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
-      <mechanicalReduction>1</mechanicalReduction>
+      <mechanicalReduction>100</mechanicalReduction>
     </actuator>
   </transmission>
 
@@ -423,7 +402,7 @@
     </joint>
     <actuator name="motor2">
       <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
-      <mechanicalReduction>1</mechanicalReduction>
+      <mechanicalReduction>100</mechanicalReduction>
     </actuator>
   </transmission>
 
@@ -434,7 +413,7 @@
     </joint>
     <actuator name="motor3">
       <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
-      <mechanicalReduction>1</mechanicalReduction>
+      <mechanicalReduction>10</mechanicalReduction>
     </actuator>
   </transmission>
 
@@ -445,10 +424,12 @@
     </joint>
     <actuator name="motor4">
       <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
-      <mechanicalReduction>1</mechanicalReduction>
+      <mechanicalReduction>10</mechanicalReduction>
     </actuator>
   </transmission>
 
+
+<!--
     <transmission name="gripper_5">
       <type>transmission_interface/SimpleTransmission</type>
       <joint name="gripper">
@@ -472,6 +453,6 @@
    </transmission>
 
 
-
+-->
 
 </robot>

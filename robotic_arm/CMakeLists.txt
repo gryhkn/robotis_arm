@@ -8,6 +8,9 @@ project(robotic_arm)
 ## if COMPONENTS list like find_package(catkin REQUIRED COMPONENTS xyz)
 ## is used, also find other catkin packages
 find_package(catkin REQUIRED COMPONENTS
+  joint_state_controller
+  robot_state_controller
+  controller_manager
   message_generation
   message_runtime
   rospy
