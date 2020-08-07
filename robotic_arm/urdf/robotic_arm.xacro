@@ -413,7 +413,7 @@
     </joint>
     <actuator name="motor3">
       <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
-      <mechanicalReduction>10</mechanicalReduction>
+      <mechanicalReduction>100</mechanicalReduction>
     </actuator>
   </transmission>
 
@@ -424,7 +424,7 @@
     </joint>
     <actuator name="motor4">
       <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
-      <mechanicalReduction>10</mechanicalReduction>
+      <mechanicalReduction>100</mechanicalReduction>
     </actuator>
   </transmission>
 

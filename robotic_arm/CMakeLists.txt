@@ -9,11 +9,15 @@ project(robotic_arm)
 ## is used, also find other catkin packages
 find_package(catkin REQUIRED COMPONENTS
   joint_state_controller
-  robot_state_controller
+  robot_state_publisher
   controller_manager
+  gazebo
   message_generation
   message_runtime
+  gazebo_ros
+  gazebo_ros_control
   rospy
+  roscpp
   rviz
   std_msgs
   tf
@@ -111,10 +115,11 @@ find_package(catkin REQUIRED COMPONENTS
 ## CATKIN_DEPENDS: catkin_packages dependent projects also need
 ## DEPENDS: system dependencies of this project that dependent projects also need
 catkin_package(
-#  INCLUDE_DIRS include
+  INCLUDE_DIRS src
 #  LIBRARIES robotic_arm
 #  CATKIN_DEPENDS message_generation message_runtime rospy rviz std_msgs tf urdf xacro
 #  DEPENDS system_lib
+
 )
 
 ###########
@@ -126,6 +131,7 @@ catkin_package(
 include_directories(
 # include
   ${catkin_INCLUDE_DIRS}
+  ${GAZEBO_INCLUDE_DIRS}
 )
 
 ## Declare a C++ library
@@ -141,7 +147,8 @@ include_directories(
 ## Declare a C++ executable
 ## With catkin_make all packages are built within a single CMake context
 ## The recommended prefix ensures that target names across packages don't collide
-# add_executable(${PROJECT_NAME}_node src/robotic_arm_node.cpp)
+
+add_executable(omx_gripper_sub_publisher src/omx_gripper_sub_publisher.cpp )
 
 ## Rename C++ executable without prefix
 ## The above recommended prefix causes long target names, the following renames the
@@ -151,12 +158,13 @@ include_directories(
 
 ## Add cmake target dependencies of the executable
 ## same as for the library above
-# add_dependencies(${PROJECT_NAME}_node ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
+
+add_dependencies(omx_gripper_sub_publisher ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
 
 ## Specify libraries to link a library or executable target against
-# target_link_libraries(${PROJECT_NAME}_node
-#   ${catkin_LIBRARIES}
-# )
+ target_link_libraries( omx_gripper_sub_publisher
+   ${catkin_LIBRARIES}
+ )
 
 #############
 ## Install ##
