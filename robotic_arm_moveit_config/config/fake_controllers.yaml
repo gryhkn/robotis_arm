@@ -8,6 +8,8 @@ controller_list:
   - name: fake_robot_hand_controller
     joints:
       - gripper
+      - gripper_sub
+      - end_effector_joint
 initial:  # Define initial robot poses.
   - group: robotic_arm
     pose: home

@@ -2,6 +2,17 @@
 <!-- Open_Manipulator Chain -->
 <robot xmlns:xacro="http://ros.org/wiki/xacro">
 
+   <!-- World -->
+   <link name="world">
+   </link>
+
+<!-- World fixed joint -->
+   <joint name="world_fixed" type="fixed">
+     <parent link="world"/>
+     <child link="base_link"/>
+   </joint>
+
+
   <!-- Link 1 -->
   <link name="link1">
     <visual>
