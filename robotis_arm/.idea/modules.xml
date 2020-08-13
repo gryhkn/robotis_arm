@@ -4,6 +4,7 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/../my_controller/.idea/my_controller.iml" filepath="$PROJECT_DIR$/../my_controller/.idea/my_controller.iml" />
       <module fileurl="file://$PROJECT_DIR$/../robotic_arm/.idea/robotic_arm.iml" filepath="$PROJECT_DIR$/../robotic_arm/.idea/robotic_arm.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../robotic_arm_moveit/.idea/robotic_arm_moveit.iml" filepath="$PROJECT_DIR$/../robotic_arm_moveit/.idea/robotic_arm_moveit.iml" />
       <module fileurl="file://$PROJECT_DIR$/../robotic_arm_moveit_config/.idea/robotic_arm_moveit_config.iml" filepath="$PROJECT_DIR$/../robotic_arm_moveit_config/.idea/robotic_arm_moveit_config.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/robotis_arm.iml" filepath="$PROJECT_DIR$/.idea/robotis_arm.iml" />
     </modules>

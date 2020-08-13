@@ -17,10 +17,25 @@
     <arg name="headless" value="$(arg headless)"/>
   </include>
 
-  <param name="robot_description" command="$(find xacro)/xacro --inorder '$(find robotic_arm)/urdf/robotic_arm.xacro'" />
+  <param name="robot_description" command="$(find xacro)/xacro --inorder '$(find robotic_arm)/urdf/robotic_arm.xacro'"/>
 
-  <node name="urdf_spawner" pkg="gazebo_ros" type="spawn_model" respawn="false" output="screen" args="-urdf -model robotic-arm -param robot_description"/>
+  <node name="spawn_gazebo_model" pkg="gazebo_ros" type="spawn_model" respawn="false" output="screen" args="-urdf -model robotic_arm -param robot_description"/>
+ <!-- urdf_spawner -->
 
-  <include file="$(find robotic_arm)/launch/robotic_control.launch"/>
+  <include file="$(find robotic_arm)/launch/controller_utils.launch"/>
+
+  <rosparam file="$(find robotic_arm)/config/ros_controllers.yaml" command="load"/>
+  <node name="arm_position_controller" pkg="controller_manager" type="controller_manager" args="spawn arm_position_controller --timeout 50" respawn="false" output="screen" />
+
+  <!-- Remap follow_joint_trajectory -->
+  <remap if="$(arg sim)" from="/follow_joint_trajectory" to="/arm_position_controller/follow_joint_trajectory"/>
+
+  <!-- Launch moveit -->
+  <include file="$(find robotic_arm_moveit)/launch/move_group.launch">
+<!--    <arg name="limited" default="$(arg limited)"/>-->
+<!--    <arg name="debug" default="$(arg debug)" />-->
+  </include>
+
+
 
 </launch>

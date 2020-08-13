@@ -7,5 +7,6 @@
     <orderEntry type="module" module-name="robotic_arm" />
     <orderEntry type="module" module-name="my_controller" />
     <orderEntry type="module" module-name="robotic_arm_moveit_config" />
+    <orderEntry type="module" module-name="robotic_arm_moveit" />
   </component>
 </module>
