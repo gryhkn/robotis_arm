@@ -7,10 +7,6 @@
     <param name="tf_prefix" type="string" value="" />
   </node>
 
-<!--  &lt;!&ndash; Fake Calibration &ndash;&gt;-->
-<!--  <node pkg="rostopic" type="rostopic" name="fake_joint_calibration"-->
-<!--        args="pub /calibrated std_msgs/Bool true" />-->
-
   <!-- joint_state_controller -->
   <rosparam file="$(find robotic_arm)/config/joint_state_controller.yaml" command="load"/>
   <node name="joint_state_controller_spawner" pkg="controller_manager" type="controller_manager" args="spawn joint_state_controller" respawn="false" output="screen"/>
