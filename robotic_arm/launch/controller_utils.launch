@@ -7,9 +7,9 @@
     <param name="tf_prefix" type="string" value="" />
   </node>
 
-  <!-- Fake Calibration -->
-  <node pkg="rostopic" type="rostopic" name="fake_joint_calibration"
-        args="pub /calibrated std_msgs/Bool true" />
+<!--  &lt;!&ndash; Fake Calibration &ndash;&gt;-->
+<!--  <node pkg="rostopic" type="rostopic" name="fake_joint_calibration"-->
+<!--        args="pub /calibrated std_msgs/Bool true" />-->
 
   <!-- joint_state_controller -->
   <rosparam file="$(find robotic_arm)/config/joint_state_controller.yaml" command="load"/>

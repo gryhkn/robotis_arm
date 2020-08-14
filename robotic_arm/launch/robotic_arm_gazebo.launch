@@ -18,12 +18,10 @@
   </include>
 
   <param name="robot_description" command="$(find xacro)/xacro --inorder '$(find robotic_arm)/urdf/robotic_arm.xacro'"/>
-
   <node name="spawn_gazebo_model" pkg="gazebo_ros" type="spawn_model" respawn="false" output="screen" args="-urdf -model robotic_arm -param robot_description"/>
- <!-- urdf_spawner -->
+
 
   <include file="$(find robotic_arm)/launch/controller_utils.launch"/>
-
   <rosparam file="$(find robotic_arm)/config/ros_controllers.yaml" command="load"/>
   <node name="arm_position_controller" pkg="controller_manager" type="controller_manager" args="spawn arm_position_controller --timeout 50" respawn="false" output="screen" />
 

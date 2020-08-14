@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<launch>
+  <rosparam file="$(find robotic_arm)/config/new_controller.yaml" command="load"/>
+  <rosparam file="$(find robotic_arm)/config/joint_state_controller.yaml" command="load"/>
+
+    <!-- start_controllers -->
+  <node name="joint_state_controller_spawner" pkg="controller_manager" type="spawner" args="joint_state_controller" respawn="false" />
+  <node name="arm_controller_spawner" pkg="controller_manager" output="screen" ns="/robotic_arm" type="spawner" args="arm_controller" />
+
+</launch>

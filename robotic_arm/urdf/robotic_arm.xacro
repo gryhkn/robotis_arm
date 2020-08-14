@@ -22,11 +22,6 @@
         </gazebo>
     </xacro:macro>
 
-  <!-- World -->
-  <!--RefLink ref="world1"/ -->
-
-  <!-- Link1 -->
-  <!--RefLink ref="base_link"/-->
   <RefLink ref="link1"/>
 
   <!-- Link2 -->
@@ -52,15 +47,6 @@
     <material>Gazebo/Red</material>
   </gazebo>
 
-<!--  <gazebo reference="robot_base">-->
-<!--    <kp>1000000.0</kp>-->
-<!--    <kd>100.0</kd>-->
-<!--    <mu1>30.0</mu1>-->
-<!--    <mu2>30.0</mu2>-->
-<!--    <maxVel>1.0</maxVel>-->
-<!--    <minDepth>0.001</minDepth>-->
-<!--    <material>Gazebo/Orange</material>-->
-<!--  </gazebo>-->
 
   <link name="world" />
 
@@ -70,39 +56,6 @@
     <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0" />
   </joint>
 
-<!--    <link name="base_link">-->
-<!--            <visual>-->
-<!--            <origin xyz="0 0 0" rpy="0 0 0"/>-->
-<!--            <geometry>-->
-<!--               <box size="0.5 0.5 0.07"/>-->
-<!--            </geometry>-->
-<!--            <material name="green">-->
-<!--                <color rgba="0.0 0.8 0.0 1.0"/>-->
-<!--            </material>-->
-<!--        </visual>-->
-
-<!--        <collision>-->
-<!--            <origin xyz="0 0 0" rpy="0 0 0"/>-->
-<!--            <geometry>-->
-<!--                <box size="0.5 0.5 0.07"/>-->
-<!--            </geometry>-->
-<!--        </collision>-->
-
-<!--        <inertial>-->
-<!--          <origin xyz="0 0 0" rpy="0 0 0"/>-->
-<!--          <mass value="1"/>-->
-<!--          <inertia-->
-<!--            ixx="1.0" ixy="0.0" ixz="0.0"-->
-<!--            iyy="1.0" iyz="0.0"-->
-<!--            izz="1.0"/>-->
-<!--        </inertial>-->
-
-<!--    </link>-->
-
-<!--    <joint name="fixed_1" type="fixed">-->
-<!--        <parent link="world"/>-->
-<!--        <child link="link1"/>-->
-<!--    </joint>-->
 
     <!-- Link 1 -->
     <link name="link1">
@@ -132,11 +85,6 @@
         </inertial>
     </link>
 
-        <!-- Joint 0 -->
-<!--    <joint name="joint0" type="fixed">
-        <parent link="world"/>
-        <child link="link1"/>
-    </joint>-->
 
     <!-- Joint 1 -->
     <joint name="joint1" type="revolute">
@@ -445,30 +393,29 @@
   </transmission>
 
 
-<!--
-    <transmission name="gripper_5">
-      <type>transmission_interface/SimpleTransmission</type>
-      <joint name="gripper">
-        <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
-      </joint>
-      <actuator name="gripper_motor">
-        <mechanicalReduction>1</mechanicalReduction>
-        <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
-      </actuator>
-   </transmission>
 
-    <transmission name="gripper_sub_6">
-      <type>transmission_interface/SimpleTransmission</type>
-      <joint name="gripper_sub">
-        <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
-      </joint>
-      <actuator name="gripper_sub_motor">
-        <mechanicalReduction>1</mechanicalReduction>
-        <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
-      </actuator>
-   </transmission>
+<!--    <transmission name="gripper_5">-->
+<!--      <type>transmission_interface/SimpleTransmission</type>-->
+<!--      <joint name="gripper">-->
+<!--        <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>-->
+<!--      </joint>-->
+<!--      <actuator name="gripper_motor">-->
+<!--        <mechanicalReduction>1</mechanicalReduction>-->
+<!--        <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>-->
+<!--      </actuator>-->
+<!--   </transmission>-->
+
+<!--    <transmission name="gripper_sub_6">-->
+<!--      <type>transmission_interface/SimpleTransmission</type>-->
+<!--      <joint name="gripper_sub">-->
+<!--        <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>-->
+<!--      </joint>-->
+<!--      <actuator name="gripper_sub_motor">-->
+<!--        <mechanicalReduction>1</mechanicalReduction>-->
+<!--        <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>-->
+<!--      </actuator>-->
+<!--   </transmission>-->
 
 
--->
 
 </robot>
